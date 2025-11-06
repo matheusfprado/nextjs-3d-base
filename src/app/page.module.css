@@ -1,0 +1,130 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding: clamp(32px, 6vw, 72px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(36px, 6vw, 64px);
+  color: #e2e8f0;
+  background: radial-gradient(circle at 20% -10%, rgba(56, 189, 248, 0.22), transparent 55%),
+    radial-gradient(circle at 80% 110%, rgba(168, 85, 247, 0.18), transparent 60%),
+    #030712;
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+.intro {
+  display: grid;
+  gap: clamp(18px, 4vw, 28px);
+  max-width: 460px;
+  z-index: 2;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(94, 234, 212, 0.42);
+  color: rgba(165, 243, 252, 0.92);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 12px;
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.2), rgba(76, 29, 149, 0.22));
+}
+
+.headline {
+  font-size: clamp(2.4rem, 2rem + 1.8vw, 3.6rem);
+  font-weight: 700;
+  color: #f8fafc;
+  letter-spacing: -0.02em;
+}
+
+.copy {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(148, 163, 184, 0.85);
+}
+
+.ctaRow {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .ctaRow {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.primaryButton {
+  padding: 14px 28px;
+  border-radius: 999px;
+  border: 1px solid rgba(94, 234, 212, 0.5);
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.32), rgba(59, 130, 246, 0.22));
+  color: #ecfeff;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 45px rgba(56, 189, 248, 0.25);
+}
+
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.32);
+  color: rgba(226, 232, 240, 0.88);
+  background: rgba(15, 23, 42, 0.56);
+  cursor: pointer;
+  transition: border 0.2s ease, color 0.2s ease;
+}
+
+.secondaryButton:hover {
+  border-color: rgba(226, 232, 240, 0.8);
+  color: #f8fafc;
+}
+
+.sceneWrapper {
+  position: relative;
+  flex: 1;
+  min-height: clamp(420px, 60vh, 720px);
+  border-radius: 28px;
+  border: 1px solid rgba(94, 234, 212, 0.15);
+  background: radial-gradient(circle at 50% 0%, rgba(34, 211, 238, 0.25), transparent 55%),
+    rgba(2, 6, 23, 0.92);
+  overflow: hidden;
+  box-shadow: 0 32px 120px rgba(2, 6, 23, 0.7);
+}
+
+.sceneWrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 40% 20%, rgba(59, 130, 246, 0.18), transparent 50%);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.sceneCanvas {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
